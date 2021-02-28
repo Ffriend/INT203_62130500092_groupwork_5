@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHOTO GALLERY</title>
+
+    <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+    <!-- Using via Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- https://tailwindcss.com/docs/installation -->
+    <!-- Using Tailwind via CDN -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+    <!-- <link href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" rel="stylesheet"> -->
+
+    <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link href="/tailwind.css" rel="stylesheet">
+</head>
+
+<body class="bg-blue-50">
+    <section id="app" class="overflow-hidden text-gray-700 body-font">
+        <p class="font-mono tracking-wider mx-auto font-bold text-5xl pt-7 m-3 pl-10 text-center">
+            PHOTO GALLERY ({{ countPic }})
+        </p>
+        <photo-search :focus="focus" :photos="photos"></photo-search>
+        <photo-view :focus="focus" :photos="photos"></photo-view>
+        <photo-item :photos="photos" :focus="focus"></photo-item>
+    </section>
+
+    <!-- my main.js -->
+    <script src="./main.js"></script>
+    <script src="./components/PhotoItem.js"></script>
+    <script src="./components/PhotoSearch.js"></script>
+    <script src="./components/PhotoView.js"></script>
+
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+
+</body>
+
+</html>
